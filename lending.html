@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <meta itemprop="name" content="零用贷款，“贷”来幸福，申请简单、极速放款"/>
+		<meta name="description" itemprop="description" content="零用宝，申请简单，快速到账。您的信用可以换钱，快来试试吧" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+		<title>零用宝</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/fav.ico"/>
+		<link rel="stylesheet" href="css/basic.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/lending.css" />
+		<title>零用宝</title>
+		<style>
+			 .weixin-tip {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.8);
+                filter: alpha(opacity=80);
+                height: 100%;
+                width: 100%;
+                z-index: 100;
+            }
+            
+            .weixin-tip img{
+                text-align: center;
+                margin-top: 10%;
+                padding: 0 5%;
+                  max-width: 100%;
+                height: auto;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="head_nav">
+			<img src="img/back.png" class="goback"/>
+			<span>申请列表</span>
+		</div>
+		<div id="root">
+			<div class="out_wrap">
+				<div class="center_page">
+					<div class="center_content">
+						<ul class="content_all">
+							<li>
+								<a id="personMessage" href="javascript:;">
+									<img src="img/person.png"/>
+									<p>个人信息</p>
+								</a>
+								<b class="done">已完成</b>
+							</li>
+							<li>
+								<a href="javascript:;" id="idIdentify">
+									<img src="img/jingying.png"/>
+									<p>上传身份证</p>
+								</a>
+								<span class="id_done">已完成</span>
+							</li>
+							<li>
+								<a href="javascript:;" id="creditIdentify">
+									<img src="img/renzheng.png"/>
+									<p>认证中心</p>
+								</a>
+								<span class="accredit_done">已完成</span>
+							</li>
+						</ul>
+						<div class="apply_arrow">
+							<img src="img/arrow.png" alt="" />
+						</div>
+					</div>
+					<div class="" style="margin-top:3rem;">
+						<form action="" method="">
+							<a href="javascript:;" class="confirm_btn" >提交申请</a>
+							<a href="center.html" id="backToCenter">返回会员中心</a>
+						</form>     
+					</div>
+					<div class="agreement">
+						<label for="" class="desc">
+							<input type="checkbox" name="" id="punish" value="" checked="checked"/>
+							我已阅读并同意逾期处罚 
+							<b class="btn-fix fix-yqcf">《逾期处罚》</b>
+						</label>
+					</div>
+				</div>
+			</div>
+			<!--逾期处罚弹出框-->
+			<div id="mask" class="mask"></div>
+			<div class="dialog">
+				 <div class="dialog_head" id="move_part">
+			    	<h1><span class="">&laquo;逾期处罚&raquo;</span></h1>
+			    	<!--<span class="" id="close">&times;</span>-->
+			    </div>
+			    <div class="dialoag_content">
+			    	<p>1、甲方未能在任何一个还款日24：00前足额支付还款金额至甲方还款账户的，视作逾期还款。</p>
+			    	<p>2、甲方逾期还款的，自还款日后第1日起向丙方支付逾期管理费，具体以甲方与丙方签订的《平台服务协议》为准。</p>
+			    	<p>3、甲方发生逾期未还情形的，由丙方承担甲方在本协议项下所负债务（包括但不限于本金、利息、逾期罚息）。丙方构成并存的债务承担，无须乙方另行授意。丙方代为履行还款义务后，原借贷关系自动消灭。</p>
+			   		<p>4、甲方发生逾期超过3日，甲方个人信息将可能进入信用征信系统，由此产生的后果由甲方承担。</p>
+			   		<p>5、甲方发生逾期情形的，乙方在此不可撤销的授权丙方及丁方以丙方名义进行催收，并授权丙方及丁方可转授权给丙方及丁方的合作方催收，催收方式包括但不限于：发送网站、APP推送通知，发送短信，发送函件、电话催收，拜访催收，提起诉讼/仲裁等。</p>
+			   		<button id="close">关闭</button>
+			    </div>
+			</div>
+			 <!--<div class="weixin-tip">
+	              <img src="img/live_weixin.png" alt="微信打开" />
+	        </div>-->
+  		<script src="js/jquery.min.js"></script>
+  		<script src="js/common.js"></script>
+		<script>
+		$(function(){
+				//返回
+			$(".goback").click(function(){
+				window.history.back(-1);
+			})
+			//逾期处罚弹出框
+			$(".btn-fix").click(function(){
+				$(".mask").css("display","block");
+				$(".dialog").css("display","block");
+			})
+			
+			  $("#close").click(function(){
+		           $(".mask").css("display","none");
+		           $(".dialog").css("display","none");
+		        });
+				var uid=sessionStorage.getItem("id");
+				var token=sessionStorage.getItem("tok");
+				if(!uid){
+					window.location.href=login_url;
+				}
+				//点击个人信息验证
+				$("#personMessage").click(function(){
+						window.location.href="person.html";
+				})
+			//点击身份证认证
+
+			$("#idIdentify").click(function(){
+				var done=$(".done");//个人信息认证
+				if(done.is(":hidden")){
+					alert('请先完成个人信息认证');
+					return;
+				}
+				window.location.href="cardIdentify.html";
+			})
+			
+			//芝麻认证&&手机运营商认证
+//			
+			$("#creditIdentify").click(function(){
+				var id_done=$(".id_done");//上传身份证完成标志
+				if(id_done.is(":hidden")){
+					alert("请先完成上传身份证认证");
+					return;
+				}
+				window.location.href="accredit.html";
+			})
+			//获取状态值
+			$.ajax({
+					type:"post",
+					url:host+"wechat/getUserStatus?uid="+uid+"&token="+token,
+					async:false,
+					success:function(res){
+						console.log(res);
+						var zmStatus=res.data.zmStatus;//芝麻
+						var phoneStatus=res.data.phoneStatus;//运营商
+						var userIdCardZ=res.data.userIdCardZ;//正面
+						var userIdCardF=res.data.userIdCardF;//反面
+						var userHeard=res.data.userHeard;//头像
+						var userStatus=res.data.userStatus;//个人信息
+						if(userStatus==2){
+							$(".done").show();
+						}else{
+							$(".done").hide();
+							
+						}
+						if(userIdCardZ==2&&userIdCardF==2&&userHeard==2){
+							$(".id_done").show();
+						}else{
+							$(".id_done").hide();
+						}
+						if(zmStatus==2&&phoneStatus==2){
+							$(".accredit_done").show();
+						}else{
+							$(".accredit_done").hide();
+						}
+					}
+				})
+			
+			
+				//提交申请
+				$(".confirm_btn").click(function(){
+					var done=$(".done");//个人信息完成标志
+					var id_done=$(".id_done");//上传身份证完成标志
+					var accredit_done=$(".accredit_done");
+					var punish=$("#punish").prop("checked");
+					
+					if(done.is(":hidden")){
+						alert("请先完成个人信息验证");
+						return;
+					}else if(id_done.is(":hidden")){
+						alert("请去完成上传身份证认证");
+						return;
+					}else if(accredit_done.is(":hidden")){
+						alert("请去认证中心完成芝麻授权和手机运营商认证");
+						return;
+					}else if(punish === false){
+						alert("请同意逾期处罚协议");
+						return;
+					}
+					var ua=navigator.userAgent;
+					if(ua.indexOf("Android") > -1 || ua.indexOf("Linux") > -1){
+						 window.location.href = "http://www.pettycash.cn/static/lingyongbao.apk";
+					}else if(ua.indexOf("iPhone")　>　-1){
+                    	window.location.href = "https://itunes.apple.com/us/app/%E9%9B%B6%E7%94%A8%E5%AE%9D/id1273027999?l=zh&ls=1&mt=8";
+					}else if (ua.indexOf('Windows NT') > -1) { //Windows电脑
+						 window.location.href = "http://www.pettycash.cn/static/lingyongbao.apk";
+	                }
+				})
+		})
+			
+		</script>
+	</body>
+</html>

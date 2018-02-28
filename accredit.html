@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	    <meta itemprop="name" content="零用贷款，“贷”来幸福，申请简单、极速放款"/>
+		<meta name="description" itemprop="description" content="零用宝，申请简单，快速到账。您的信用可以换钱，快来试试吧" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+		<title>零用宝</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/fav.ico"/>
+		<link rel="stylesheet" href="css/basic.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/accredit.css" />
+	</head>
+	<body>
+		<div class="head_nav">
+			<img src="img/back.png" class="goback"/>
+			<span>认证中心</span>
+		</div>
+		<div calss="bj">
+			<div class="accredit_content">
+				<div class="zmIdentify">
+					<div class="fl">
+						<img src="img/zm.jpg" alt="" />
+					</div>
+					<div class="fr zmScore_cont">
+						<span class="zmScore">芝麻分认证</span>
+						<a href="" class="goAccredit">去授权</a>
+					</div>
+				</div>
+				<div class="zmIdentify">
+					<div class="fl">
+						<img src="img/phone.jpg" alt="" />
+					</div>
+					<div class="fr zmScore_cont">
+						<span class="zmScore">手机认证--<span class="telNumber"></span></span>
+						<a href="" class="tel_goAccredit">去授权</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			$(function(){
+				$(".goback").click(function(){
+				window.history.go(-1);
+			})
+			var telNumber=sessionStorage.getItem("phone");
+			$(".telNumber").text(telNumber);
+			
+			var uid=sessionStorage.getItem("id");
+			var token=sessionStorage.getItem("tok");
+			
+			if(!uid){
+				window.location.href=login_url;
+			}
+			$(".goAccredit").attr("href",host+"creditreport/zm-mobile-api?uid="+uid);
+			$(".tel_goAccredit").attr("href",host+"credit-web2/verification-jxl?uid="+uid);
+			
+			$.ajax({
+				type:"post",
+				async:false,
+				url:host+"wechat/getUserStatus?uid="+uid+"&token="+token,
+				success:function(res){
+					console.log(res)
+					var phoneStatus=res.data.phoneStatus;
+					var zmStatus=res.data.zmStatus;
+					$(".tel_goAccredit").text("");
+					$(".goAccredit").text("");
+						if(phoneStatus==2){
+							$(".tel_goAccredit").attr("href","javascript:;")
+							$(".tel_goAccredit").css("background","#ccc");
+							$(".tel_goAccredit").text("已授权");
+						}else{
+							$(".tel_goAccredit").css("background","#EC2B2B");
+							$(".tel_goAccredit").text("去授权");
+						}
+						if(zmStatus==2){
+							$(".goAccredit").attr("href","javascript:;")
+							$(".goAccredit").css("background","#ccc");
+							$(".goAccredit").text("已授权");
+						}else{
+							$(".goAccredit").css("background","#EC2B2B");
+							$(".goAccredit").text("去授权");
+						}
+				}
+			})
+		})
+			
+		</script>
+	</body>
+</html>

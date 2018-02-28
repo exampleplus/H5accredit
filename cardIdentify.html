@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	    <meta itemprop="name" content="零用贷款，“贷”来幸福，申请简单、极速放款"/>
+		<meta name="description" itemprop="description" content="零用宝，申请简单，快速到账。您的信用可以换钱，快来试试吧" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+		<title>零用宝</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/fav.ico"/>
+		<link rel="stylesheet" href="css/basic.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/cardIdentify.css" />
+		<style>
+			.pic_show1{
+				text-align: center;
+    			background: url(img/loading.gif) 1000px center no-repeat;
+			}
+			.pic_loading1{
+				text-align: center;
+    			background: url(img/loading.gif) center no-repeat;
+				background-position: center !important;
+			}
+			.pic_loading1 img{
+				opacity: 0;
+			}
+			
+			.pic_show2{
+				text-align: center;
+    			background: url(img/loading.gif) 1000px center no-repeat;
+			}
+			.pic_loading2{
+				text-align: center;
+    			background: url(img/loading.gif) center no-repeat;
+				background-position: center !important;
+			}
+			.pic_loading2 img{
+				opacity: 0;
+			}
+			
+			
+			.pic_show3{
+				text-align: center;
+    			background: url(img/loading.gif) 1000px center no-repeat;
+			}
+			.pic_loading3{
+				text-align: center;
+    			background: url(img/loading.gif) center no-repeat;
+				background-position: center !important;
+			}
+			.pic_loading3 img{
+				opacity: 0;
+			}
+			#preview_box img{
+				width:100%;
+			}
+			/*.thumbnail img{
+				width:100%;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div class="head_nav">
+			<img src="img/back.png" class="goback"/>
+			<span>身份证认证</span>
+		</div>
+		<!--上传身份证正面 start-->
+		<div class="idcard">
+			<form class="form" id="form1" action="" method="post" accept-charset="utf-8" enctype="multipart/form-data" target="uploadimg_ifm">
+				<div class="form-group">
+					<label class="label">上传身份证正面   <span class="red">*</span></label>
+					<div class="relative mt10">
+						<label class="btn btn-primary btn-posit" for="img">点击选择图片</label>
+						<input type="file" id="img" accept="image/*" style="display:none" name="file" multiple/>
+						<div id="uploader-demo">
+							<div id="fileList" class="uploader-list pic_show1"></div>
+						</div>
+					</div>
+				</div>
+				<input type="submit" value="开始上传" class="subBtn_cardPosit"/>
+		  </form>
+		</div>
+		<!--上传身份证正面  end-->
+		<!--上传身份证反面 start-->
+		<div class="idcard">
+			<form id="form2" action="" method="post" enctype="multipart/form-data" target="uploadimg_ifm1">
+				<div class="form-group">
+					<label class="label"> 上传身份证反面    <span class="red"> *</span></label>
+					<div class="relative mt10" id="upload-container">
+						<label class="btn-primary btn btn-reverse" for="img2">点击选择图片</label>
+						<input type="file" id="img2" accept="image/*" style="display:none" name="file" multiple>
+						<div id="uploader-demo2">
+							<div id="fileList2" class="uploader-list pic_show2"></div>
+						</div>
+					</div>
+				</div>
+				<input type="submit" value="开始上传" class="subBtn_cardReverse"/>
+				<!--<input id="img_input" type="file" accept="image/gif, image/png, image/jpg, image/jpeg" name='file' capture="camera"/>
+				<div id="preview_box"></div>-->
+			</form>
+		</div>
+		
+		<!--上传身份证反面 end-->
+		
+		<!--上传头像 start-->
+		<div class="idcard">
+			<form id="form3" action="" method="post" enctype="multipart/form-data" target="uploadimg_ifm2">
+				<div class="form-group">
+					<label class="label"> 上传本人照片    <span class="red"> *</span></label>
+					<div class="relative mt10">
+						<label class="btn-primary btn btn-user" for="img3">点击选择图片</label>
+						<input type="file" id="img3" accept="image/*" style="display:none" name="file" multiple>
+						<div id="uploader-demo3">
+							<div id="fileList3" class="uploader-list pic_show3"></div>
+						</div>
+					</div>
+				</div>
+				<input type="submit" value="开始上传" class="subBtn_user"/>
+			</form>
+		</div>
+		<!--上传头像 end-->
+		
+		<div class="finish">
+			<button class="btn_finish">完成</button>
+		</div>
+		
+		<script src="js/jquery.min.js"></script>
+		<!--<script src="https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.js"></script>-->
+
+		<script src="js/lrz.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			$(".goback").click(function(){
+				window.history.back(-1);
+			})
+			var uid=sessionStorage.getItem("id");
+			var token=sessionStorage.getItem("tok");
+			if(!uid){
+					window.location.href=login_url;
+				}
+			//上传身份证正面
+			
+			$("#img").change(function(){
+				$(".btn-posit").text("图片上传中.....");
+				$(".pic_show1").addClass("pic_loading1");
+				var file = this.files[0]; //选择上传的文件
+			    var _this = $(this);
+			    lrz(this.files[0],{width:800}).then(function(data) {
+			        return uploadZ(_this.get(0) , data.formData);
+			    }).then(function(data) {
+			    	console.log(data)
+			    	if(data.code==0){
+			    		var r1 = new FileReader();
+						r1.readAsDataURL(file); //Base64
+						$(r1).load(function() {
+			    			$(".pic_show1").removeClass("pic_loading1");
+							$(".btn-posit").text("点击选择图片");
+							var $li1 = $(
+								'<div class="file-item thumbnail show1">' +
+								'<img src="' + this.result + '" alt="" style="max-width:100%;">' 
+								+'</div>'
+							);
+							$('#fileList').html($li1);
+						});
+			    	}else{
+			    		alert(data.message);
+			    		$(".pic_show1").removeClass("pic_loading1");
+			    		$(".btn-posit").text("点击选择图片");
+			    	}
+			        
+			    }).catch(function(err) {
+			        console.log(err);
+			    });
+			});
+
+		function uploadZ(selector , formData) {
+		    if(!formData) {
+		        formData = new FormData();
+		        formData.append("file", $("#img")[0].files[0]);
+		    }
+		    var url = host+"upload/uploadIdCardZ?uid="+uid+"&token="+token;
+		    return new Promise(function(resolve,reject){
+		        $.ajax({
+		            url : url,
+		            type : 'POST',
+		            data : formData,
+		            processData : false,
+		            contentType : false,
+		            dataType:"json",
+		            success : function(response) {
+		            	console.log(response);
+		            	
+		                resolve(response);
+		            },
+		            error : function(response) {
+		                reject(response);
+		                
+		            }
+		        });
+		    });
+		}
+		//上传身份证反
+
+			$("#img2").change(function(){
+				$(".btn-reverse").text("图片上传中.....");
+				$(".pic_show2").addClass("pic_loading2")
+				var file = this.files[0]; //选择上传的文件
+			    var _this = $(this);
+			     lrz(this.files[0],{width:800}).then(function(data){
+//			     	var fileLen=data.fileLen;
+//			     	fileLen=30720
+			     	 return uploadF(_this.get(0) , data.formData);
+			     }).then(function(data) {
+			     		if(data.code==0){
+			     			var r2 = new FileReader();
+							r2.readAsDataURL(file); //Base64
+							$(r2).load(function() {
+									$(".btn-reverse").text("点击选择图片")
+			    					$(".pic_show2").removeClass("pic_loading2");
+								var $li2 = $(
+									'<div class="file-item thumbnail show2">' +
+									'<img src="' + this.result + '" alt="" style="max-width:100%">'
+									+'</div>'
+								);
+								$('#fileList2').html($li2);
+							});
+			     		}else{
+			     			alert(data.message);
+			    			$(".pic_show2").removeClass("pic_loading2");
+			    			$(".btn-reverse").text("点击上传图片")
+			     		}
+					
+			    }).catch(function(err){
+			        console.log(err);
+			    });
+			});
+		function uploadF(selector , formData) {
+		    if(!formData) {
+		        formData = new FormData();
+		        formData.append("file", $("#img2")[0].files[0]);
+		    }
+		    var url =host+"upload/idCardImageUploadF?uid="+uid+"&token="+token;
+		    return new Promise(function(resolve,reject){
+		        $.ajax({
+		            url : url,
+		            type : 'POST',
+		            data : formData,
+		            processData : false,
+		            contentType : false,
+		            dataType:"json",
+		            success : function(response) {
+		                resolve(response);
+		            },
+		            error : function(response) {
+		                reject(response);
+		            }
+		        });
+		    });
+		}
+			
+			//上传本人照片
+			$("#img3").change(function(){
+				$(".btn-user").text("图片上传中.....");
+				$(".pic_show3").addClass("pic_loading3");
+				var file = this.files[0]; //选择上传的文件
+			    var _this = $(this);
+			    lrz(this.files[0],{width:800}).then(function(data) {
+			        return uploadHeader(_this.get(0) , data.formData);
+			    }).then(function(data) {
+			    	console.log(data)
+			    	if(data.code==0){
+			    		var r3 = new FileReader();
+						r3.readAsDataURL(file); //Base64
+						$(r3).load(function() {
+							$(".pic_show3").removeClass("pic_loading3");
+							$(".btn-user").text("点击选择图片")
+							var $li3 = $(
+								'<div class="file-item thumbnail show3">' +
+								'<img src="' + this.result + '" alt="" style="max-width:100%">' 
+								+'</div>'
+							);
+							$('#fileList3').html($li3);
+						});
+			    	}else{
+		    			alert(data.message);
+		    			$(".pic_show3").removeClass("pic_loading3");
+		    			$(".btn-user").text("点击上传图片");
+			    	}
+			    }).catch(function(err) {
+			        console.log(err);
+			    });
+			});
+
+		function uploadHeader(selector , formData) {
+		    if(!formData) {
+		        formData = new FormData();
+		        formData.append("file", $("#img3")[0].files[0]);
+		    }
+		    var url = host+"upload/uploadHeardPicture?uid="+uid+"&token="+token;
+		    return new Promise(function(resolve,reject){
+		        $.ajax({
+		            url : url,
+		            type : 'POST',
+		            data : formData,
+		            processData : false,
+		            contentType : false,
+		            dataType:"json",
+		            success : function(response) {
+		            	console.log(response);
+		            	
+		                resolve(response);
+		            },
+		            error : function(response) {
+		                reject(response);
+		            }
+		        });
+		    });
+		}
+		
+				//身份证正面
+//				var action=$("#form1").attr("action",host+"upload/uploadIdCardZ?uid="+uid+"&token="+token);
+//				$("#form1").ajaxForm(function(data){
+//						console.log(data)
+//						alert(data.message)
+//				});
+//				点击完成
+				var show1=$(".show1");
+				var show2=$(".show2");
+				var show3=$(".show3");
+				
+				$(".btn_finish").click(function(){
+					if(show1.html()==""){
+						alert("请上传身份证正面");
+						return;
+					}else if(show2.html()==""){
+						alert("请上传身份证反面");
+						return;
+					}else if(show3.html()==""){
+						alert("请上传本人照片");
+						return;
+					}else {
+						alert("认证成功")
+					}
+					window.location.href="lending.html";
+			})
+				
+			$.ajax({
+				type:"post",
+				url:host+"wechat/getUserStatus?uid="+uid+"&token="+token,
+				async:false,
+				success:function(res){
+					console.log(res)
+					data=res.data
+					var userIdCardZUrl=data.userIdCardZUrl;
+					var userIdCardFUrl=data.userIdCardFUrl;
+					var userHeardUrl=data.userHeardUrl;
+					//正面
+					var $li1 = $(
+						'<div class="file-item thumbnail show1">' +
+						'<img src="' + userIdCardZUrl + '" alt="" style="max-width:100%;">' 
+						+'</div>'
+					);
+					$('#fileList').html($li1);
+//					
+					//反面
+					var $li2 = $(
+						'<div class="file-item thumbnail show2">' +
+						'<img src="' + userIdCardFUrl + '" alt="" style="max-width:100%;">'
+						+'</div>'
+					);
+					$('#fileList2').html($li2);
+					
+					//本人照片
+					var $li3 = $(
+						'<div class="file-item thumbnail show3">' +
+						'<img src="' + userHeardUrl + '" alt="" style="max-width:100%;"/>' 
+						+'</div>'
+					);
+					$('#fileList3').html($li3);
+				}
+			})
+		</script>
+	</body>
+</html>

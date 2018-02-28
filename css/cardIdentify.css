@@ -1,0 +1,127 @@
+.head_nav{
+	height: 2.5rem;
+    background: #0094FF;
+    line-height: 2.5rem;
+    text-align: center;
+}
+.head_nav img {
+    width: 1rem;
+    margin-top: 0.75rem;
+    margin-left: 0.6rem;
+    float:left;
+}
+.head_nav span{
+	color:#fff;
+	font-size: 0.8rem;
+	margin-left:-1.5rem;
+}
+.idcard{
+	height: auto;
+    margin: 5% 0;
+    position: relative;
+}
+.file_box{
+	margin: 2% 2%;
+    padding: 4% 1%;
+    background: #ff
+}
+.sfz {
+    padding: 5px;
+    height: auto;
+    overflow: hidden;
+    font-size: 0.7rem;
+}
+.red{
+	color:red;
+}
+.relative{
+	position: relative;
+}
+
+/*身份证正面上传*/
+.reverse{
+	position:relative;
+}
+#img{
+	 position: absolute;
+    top: 10px;
+    left: 16%;
+}
+#img2{
+	position: absolute;
+    top: 2px;
+    left: 14%;
+    display: none;
+}
+#img3{
+	position: absolute;
+    top: 2px;
+    left: 14%;
+    display: none;
+}
+#uploader-demo,#uploader-demo2,#uploader-demo3{
+	width:80%;
+	margin:5% auto;
+	text-align: center;
+}
+
+.uploader-list,.uploader-list2{
+	width: 100%;
+	overflow: hidden;
+}
+.thumb-image{
+	max-width: 100%;
+}
+.label{
+	font-size: 0.65rem;
+}
+.btn{
+	margin: 5px 20%;
+    background: #057dd3;
+    border-radius: 46px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 0.65rem;
+    height: 2rem;
+    line-height: 2rem;
+}
+.mt10{
+	margin-top:1rem;
+}
+.subBtn_cardPosit,.subBtn_cardReverse,.subBtn_user{
+	width:80%;
+	margin:5% 10%;
+	background: #00b7ee;
+    color: #fff;
+    border-color: transparent;
+    border: 1px solid #cfcfcf;
+    display: inline-block;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    font-size: 0.65rem;
+    line-height: 2rem;
+    display:none;
+    -webkit-appearance: none
+    /*position: absolute;
+    left:50%;
+    margin-left:-3rem;*/
+   
+}
+
+	
+.finish{
+	
+	margin:5px 20%;
+}
+.btn_finish{
+	width:100%;
+	height: 2rem;
+    line-height: 2rem;
+    background: #0094FF;
+    color: #F8F5F5;
+    font-size:0.7rem;
+    text-align: center;
+    border-radius: 0.1rem;
+    display: block;
+}

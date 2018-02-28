@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <meta itemprop="name" content="零用贷款，“贷”来幸福，申请简单、极速放款"/>
+		<meta name="description" itemprop="description" content="零用宝，申请简单，快速到账。您的信用可以换钱，快来试试吧" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+		<title>零用宝</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/fav.ico"/>
+		<link rel="stylesheet" href="css/basic.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/person.css" />
+	</head>
+	<body>
+		<div class="head_nav">
+			<img src="img/back.png" class="goback"/>
+			<span>个人信息</span>
+		</div>
+		<div class="person_content">
+			<form id="form1">
+				<!--个人信息 start -->
+				<div class="identify_cont">
+					<div class="personInfo">
+						个人信息<span class="red">*</span>
+					</div>
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">姓名</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td> <input type="text" maxlength="256" name="name" id="name" value="" placeholder="请输入姓名"> </td> 
+							</tr> 
+						</table>
+					</div>
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width=" 100">身份证号</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td> <input type="text" maxlength="256" name="idCard" id="idCard" placeholder="请输入身份证号"> </td> 
+							</tr> 
+						</table>
+					</div>
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">学历</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td>
+									<select name="education" id="education">
+										<option value="1">博士</option>
+										<option value="2">硕士</option>
+										<option value="3">本科</option>
+										<option value="4">大专</option>
+										<option value="5">中专</option>
+										<option value="6">高中</option>
+										<option value="7">初中以下</option>
+									</select>
+								</td> 
+							</tr> 
+						</table>
+					</div>
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">婚姻状况</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td>
+									<select name="marriage" id="marriage">
+										<option value="1">未婚</option>
+										<option value="2">已婚未育</option>
+										<option value="3">已婚已育</option>
+										<option value="4">离异</option>
+										<option value="100">其他</option>
+									</select>
+								</td> 
+							</tr> 
+						</table>
+					</div>
+				</div>
+				<!--个人信息 end -->
+				
+				<!--居住地址start-->
+				<div class="address">
+					<div class="addressInfo">
+						现居住地址<span class="red">*</span>
+					</div>
+					<!--<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">省份/直辖市</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td>
+									<select id="province" name="province">
+										<option value="北京市">北京市</option>
+										<option value="天津市">天津市</option>
+										<option value="上海市">上海市</option>
+										<option value="重庆市">重庆市</option>
+										<option value="河北省">河北省</option>
+										<option value="山西省">山西省</option>
+										<option value="内蒙古">内蒙古</option>
+										<option value="辽宁省">辽宁省</option>
+										<option value="吉林省">吉林省</option>
+										<option value="黑龙江省">黑龙江省</option>
+										<option value="江苏省">江苏省</option>
+										<option value="浙江省">浙江省</option>
+										<option value="安徽省">安徽省</option>
+										<option value="福建省">福建省</option>
+										<option value="江西省">江西省</option>
+										<option value="山东省">山东省</option>
+										<option value="河南省">河南省</option>
+										<option value="湖北省">湖北省</option>
+										<option value="湖南省">湖南省</option>
+										<option value="广东省">广东省</option>
+										<option value="广西">广西</option>
+										<option value="海南省">海南省</option>
+										<option value="四川省">四川省</option>
+										<option value="贵州省">贵州省</option>
+										<option value="云南省">云南省</option>
+										<option value="西藏">西藏</option>
+										<option value="陕西省">陕西省</option>
+										<option value="甘肃省">甘肃省</option>
+										<option value="青海省">青海省</option>
+										<option value="宁夏">宁夏</option>
+										<option value="新疆">新疆</option>
+										<option value="香港">香港</option>
+										<option value="澳门">澳门</option>
+										<option value="台湾省">台湾省</option>
+									</select>
+								</td> 
+							</tr> 
+						</table>
+					</div>-->
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">市/县/区</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td> <input type="text" maxlength="256" name="city" id="city" value="" placeholder="如郑州市**县**区"> </td> 
+							</tr> 
+						</table>
+					</div>
+					
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">详细地址</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td> <input type="text" maxlength="256" name="district" id="district" placeholder="如中山北路长城大厦2102"> </td> 
+							</tr> 
+						</table>
+					</div>
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">居住时长</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td>
+									<select name="liveTime" id="liveTime">
+										<option value="1">半年以内</option>
+										<option value="2">半年到一年</option>
+										<option value="3">一年以上</option>
+									</select>
+								</td> 
+							</tr> 
+						</table>
+					</div>
+				</div>
+				<!--居住地址end-->
+				<!--直系亲属信息start-->
+				<div class="address">
+					<div class="addressInfo">
+						直系亲属信息<span class="red">*</span>
+					</div>
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">姓名</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td> <input type="text" maxlength="256" name="closelyName" id="closelyName" value="" placeholder="请输入姓名"> </td> 
+							</tr> 
+						</table>
+					</div>
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">关系</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td>
+									<select name="closelyRelation" id="closelyRelation">
+										<option value="1">父亲</option>
+										<option value="2">母亲</option>
+										<option value="3">儿子</option>
+										<option value="4">女儿</option>
+										<option value="5">配偶</option>
+										<option value="6">兄弟</option>
+										<option value="7">姐妹</option>
+									</select>
+								</td> 
+							</tr> 
+						</table>
+					</div>
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">电话</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td> <input type="text" maxlength="256" name="closelyNumber" id="closelyNumber" placeholder="请输入联系方式"> </td> 
+							</tr> 
+						</table>
+					</div>
+				</div>
+				<!--直系亲属信息end-->
+				<!--其他联系人信息start-->
+				<div class="address">
+					<div class="addressInfo">
+						其他联系人信息<span class="red">*</span>
+					</div>
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">姓名</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td> <input type="text" maxlength="256" name="contactName" id="contactName" placeholder="请输入姓名"> </td> 
+							</tr> 
+						</table>
+					</div>
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">关系</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td>
+									<select name="contactRelation" id="contactRelation">
+										<option value="1">同学</option>
+										<option value="2">亲戚</option>
+										<option value="3">同事</option>
+										<option value="4">朋友</option>
+										<option value="5">其他</option>
+									</select>
+								</td> 
+							</tr> 
+						</table>
+					</div>
+					<div class="personName">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="100">电话</td> 
+								<td><img src="img/line.jpg"></td> 
+								<td> <input type="text" maxlength="256" name="contactNumber" id="contactNumber" placeholder="请输入联系方式"> </td> 
+							</tr> 
+						</table>
+					</div>
+				</div>
+				<!--直系亲属信息end-->
+			</form>
+		</div>
+		<input type="button" name="subBtn" id="subBtn" value="提交" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/person.js"></script>
+		<script>
+			$(".goback").click(function(){
+				window.history.back(-1)
+			})
+		</script>
+	</body>
+</html>
+
+<script>
+	var uid=sessionStorage.getItem("id");
+	var token=sessionStorage.getItem("tok");
+	if(!uid){
+		window.location.href=login_url;
+	}
+		$.ajax({
+				type:"post",
+				url:host+"wechat/getPersonInfo?uid="+uid+"&token="+token,
+				async:false,
+				success:function(res){
+					console.log(res)
+					data=res.data;
+					var realNameStatus=data.realNameStatus;
+					var jxlStatus=data.jxlStatus;
+					if(realNameStatus==1){
+						$("#name").prop("readOnly",true);
+						$("#idCard").prop("readOnly",true)
+					}else{
+						$("#name").prop("readOnly",false);
+						$("#idCard").prop("readOnly",false);
+					}
+					if(jxlStatus == 1){
+						$("#closelyName").prop("disabled",true);
+						$("#closelyRelation").prop("disabled",true);
+						$("#closelyNumber").prop("disabled",true);
+						
+						$("#contactName").prop("disabled",true);
+						$("#contactRelation").prop("disabled",true);
+						$("#contactNumber").prop("disabled",true);
+					}else{
+						$("#closelyName").prop("disabled",false);
+						$("#closelyRelation").prop("disabled",false);
+						$("#closelyNumber").prop("disabled",false);
+						
+						$("#contactName").prop("disabled",false);
+						$("#contactRelation").prop("disabled",false);
+						$("#contactNumber").prop("disabled",false);
+					}
+					if(res.code==0){
+						
+						$("#name").val(data.name);
+						$("#idCard").val(data.idCard);
+						$("#education").val(data.education);//学历
+						$("#marriage").val(data.marriage);//婚姻状况
+						$("#city").val(data.city);
+						$("#district").val(data.district);
+						$("#liveTime").val(data.liveTime);//居住时间
+			          	$("#closelyName").val(data.closelyName);
+			          	$("#closelyRelation").val(data.closelyRelation);//直系亲属关系
+			          	$("#closelyNumber").val(data.closelyNumber);
+			          	$("#contactName").val(data.contactName);//其他联系人姓名
+			          	$("#contactRelation").val(data.contactRelation);//其他联系人关系
+			          	$("#contactNumber").val(data.contactNumber);
+			          	
+					}
+					else{
+						alert(res.message)
+					}
+				}
+			});
+
+</script>

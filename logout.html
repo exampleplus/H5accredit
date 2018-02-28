@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <meta itemprop="name" content="零用贷款，“贷”来幸福，申请简单、极速放款"/>
+		<meta name="description" itemprop="description" content="零用宝，申请简单，快速到账。您的信用可以换钱，快来试试吧" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+		<title>零用宝</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/fav.ico"/>
+		<link rel="stylesheet" href="css/basic.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/logout.css" />
+	</head>
+	<body>
+		<div class="head_img">
+			<img src="img/header.png"/>
+		</div>
+		<div class="apply_box">
+			<div class="t3">
+				<span class="tii">简介：</span>
+			</div>
+			<div class="content apply_intro">
+				零用宝是一款应急小额借款APP，借款额度最高至5000元。首次借款额度：1000-5000元。
+			</div>
+		</div>
+		<div class="apply_box">
+			<div class="t3">
+				<span class="tii">申请资格：</span>
+			</div>
+			<div class="content2">
+				<span>1</span>芝麻分600+；<br>
+				<span>2</span>手机实名制并使用半年以上；<br>
+			</div>
+		</div>
+		<div class="apply_box">
+			<div class="t3">
+				<span class="tii">温馨提示：</span>
+			</div>
+			<div class="content2">
+				<span>1</span>借款客户请仔细阅读借款条件，不符合条件的，本公司暂时不提供借款服务；<br>
+				<span>2</span>借款资料请如实填写，若公司发现资料不属实，将终止借款服务。
+			</div>
+		</div>
+		<div class="footer">
+			<a href="index.html" class="btn_apply">开始申请</a>
+			<a href="javascript:;" class="btn_back">返回会员中心</a>
+		</div>
+		<script src="js/jquery.min.js"></script>
+  		<script src="js/common.js"></script>
+		<script>
+			$(".btn_back").click(function(){
+				var uid=sessionStorage.getItem("id");
+				if(!uid){
+					window.location.href="middle.html";
+				}
+			})
+		</script>
+	</body>
+</html>

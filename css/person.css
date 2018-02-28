@@ -1,0 +1,73 @@
+.head_nav{
+	height: 2.5rem;
+    background: #0094FF;
+    line-height: 2.5rem;
+    text-align: center;
+}
+.head_nav img {
+    width: 1rem;
+    margin-top: 0.75rem;
+    margin-left: 0.6rem;
+    float:left;
+}
+.head_nav span{
+	color:#fff;
+	font-size: 0.8rem;
+	margin-left:-1.5rem;
+}
+.person_content{
+	height: auto;
+	overflow: hidden;
+	position: relative;
+}
+.personInfo,.addressInfo{
+	height:2rem;
+	line-height: 2rem;
+    padding: 0 0.15rem 0 0.3rem;
+    font-size: 0.6rem;
+}
+.red{
+	color:red;
+}
+.personName{
+	border-top: solid 1px #eeeeee;
+    border-bottom: solid 1px #eeeeee;
+    height: 55px;
+    margin-top: 7px;
+    padding: 0px 10px;
+    background: #fff;
+}
+.personName table{
+	margin:0;
+	width:100%;
+}
+.personName table td {
+	font-size: 0.7rem;
+    height: 55px;
+    text-align: center;
+}
+input[type=text],select {
+    width: 100%;
+    display: block;
+    height: 53px;
+    text-indent: 10px;
+    color: #666;
+    font-size: 14px;
+    background: none;
+}
+#subBtn{
+	background: #ec2b2b;
+    color: #fff;
+    border: 0;
+    border-radius: 45px;
+    margin: 30px 4% 50px 4%;
+    width: 92%;
+    padding: 0 0;
+    line-height: 2.4rem;
+    text-align: center;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 9px -3px #7e0000;
+}
+#subBtn{
+	-webkit-appearance: none;
+}

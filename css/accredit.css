@@ -1,0 +1,71 @@
+.head_nav{
+	height: 2.5rem;
+    background: #0094FF;
+    line-height: 2.5rem;
+    text-align: center;
+}
+.head_nav img {
+    width: 1rem;
+    margin-top: 0.75rem;
+    margin-left: 0.6rem;
+    float:left;
+}
+.head_nav span{
+	color:#fff;
+	font-size: 0.8rem;
+	margin-left:-1.5rem;
+}
+.bj{
+	height:auto;
+	overflow: hidden;
+	position: relative;
+}
+.accredit_content{
+	height: 2rem;
+    padding:0.2rem 0.4rem 0 0.4rem;
+    font-size: 0.65rem;
+    /*background: #ccc;*/
+}
+.zmIdentify{
+	height:auto;
+	overflow: hidden;
+	border-top: solid 0.1rem #eeeeee;
+    border-bottom: solid 0.1rem #eeeeee;
+    margin-top: 0.3rem;
+    padding: 0 0.4rem;
+    background: #FFF;
+}
+.zmScore_cont{
+	margin-right:1rem;
+	padding-top:0.5rem;
+	text-align: center;
+}
+.zmScore{
+	color:#000;
+	font-size: 0.65rem;
+	display: block;
+}
+.goAccredit{
+	display: block;
+	 height: 1.5rem;
+    /*background: #EC2B2B;*/
+    color: #F8F5F5;
+    font-size: 0.6rem;
+    border-radius:0.1rem;
+    text-align: center;
+    line-height: 1.5rem;
+    margin: 0.2rem auto 0.2rem;
+    width: 8rem;
+}
+.tel_goAccredit{
+	display: block;
+	 height: 1.5rem;
+    /*background: #EC2B2B;*/
+    color: #F8F5F5;
+    font-size: 0.6rem;
+    border-radius:0.1rem;
+    text-align: center;
+    line-height: 1.5rem;
+    margin: 0.2rem auto 0.2rem;
+    width: 8rem;
+}

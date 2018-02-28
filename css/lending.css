@@ -1,0 +1,232 @@
+.head_nav{
+	height: 2.5rem;
+    background: #0094FF;
+    line-height: 2.5rem;
+    text-align: center;
+}
+.head_nav img {
+    width: 1rem;
+    margin-top: 0.75rem;
+    margin-left: 0.6rem;
+    float:left;
+}
+.head_nav span{
+	color:#fff;
+	font-size: 0.8rem;
+	margin-left:-1.5rem;
+}
+.out_wrap{
+	width:100%;
+}
+.center_content{
+	/*background: #fff url(../img/down_arrow.png) no-repeat center bottom;*/
+    position: relative;
+    /*overflow: hidden;*/
+    margin-top: 0.2rem;
+}
+.content_all{
+	position: relative;
+    z-index: 99;
+    padding: 10px 0 0 0;
+}
+.content_all li {
+    position: relative;
+    margin: 0 5% 5%;
+    text-align: center;
+    border: 1px solid #bbb;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50px;
+}
+.done{
+	position: absolute;
+    right: 2.1rem;
+    top: 1.05rem;
+    color: #bababa;
+    font-weight: normal;
+	color: #0094ff;
+    border: 0.013rem solid #0094ff;
+    transform: translate(-55%,0%) rotateZ(30deg) scale(1.3);
+    display: none;
+
+}
+.id_done{
+	position: absolute;
+    right: 2.1rem;
+    top: 1.05rem;
+    color: #bababa;
+    font-weight: normal;
+	color: #0094ff;
+    border: 0.013rem solid #0094ff;
+    transform: translate(-55%,0%) rotateZ(30deg) scale(1.3);
+    display: none;
+}
+.accredit_done{
+	position: absolute;
+    right: 2.1rem;
+    top: 1.05rem;
+    color: #bababa;
+    font-weight: normal;
+	color: #0094ff;
+    border: 0.013rem solid #0094ff;
+    transform: translate(-55%,0%) rotateZ(30deg) scale(1.3);
+    display: none;
+}
+.content_all li:after {
+    content: "";
+    position: absolute;
+    right: 0.9rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    background: url(../img/go.png) no-repeat;
+    background-size: 100%;
+    top: 1.1rem;
+}
+.content_all li a {
+    display: block;
+    overflow: hidden;
+}
+.content_all li img {
+    height: 3rem;
+    margin-left: 0.3rem;
+    float: left;
+    padding: 5px 0;
+}
+.content_all li p {
+    display: inline-block;
+    color: #626262;
+    font-size: 0.8rem;
+    float: left;
+    margin: 1rem 0 0 0.8rem;
+    font-weight: bold;
+    padding: 0;
+}
+.apply_arrow{
+	position: absolute;
+    left: 44%;
+    top: 5%;
+    z-index: 9;
+}
+
+@media screen and (max-width:415px ) {
+		.apply_arrow{
+	    top: 22%;
+	}
+}
+@media screen and (min-width:415px ) {
+		.apply_arrow{
+	    top: 30%;
+	}
+}
+@media screen and (max-width:413px ) {
+		.apply_arrow{
+	    top: 18%;
+	}
+}
+@media screen and (max-width:376px ) {
+		.apply_arrow{
+	    top: 14%;
+	}
+}
+@media screen and (max-width:361px ) {
+		.apply_arrow{
+	    top: 12%;
+	}
+}
+@media screen and (max-width:321px ) {
+		.apply_arrow{
+	    top: 5%;
+	}
+}
+.confirm_btn{
+	margin: 10%;
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 0.7rem;
+    border-radius: 50px;
+    background: #EC2B2B;;
+    text-align: center;
+    color: #fff;
+    display: block;
+}
+.mt20{
+	margin-top:2rem;
+}
+#backToCenter{
+	margin:10%;
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 0.7rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 9px -3px #7e0000;
+    background: #656565;
+    text-align: center;
+    color: #fff;
+    display: block;
+}
+.agreement{
+	padding:5% 5%;
+}
+#punish{
+	width:15px;
+	height:15px;
+	position: relative;
+	top:0.1rem;
+}
+.desc{
+	font-size: 0.6rem;
+}
+.mask{
+	width: 100%;
+	height: 100%;
+	background:#000;
+	position: absolute;
+	top: 0px;
+	left:0px;
+	opacity: 0.4;
+	z-index: 8000;
+	 display: none;
+	 -moz-user-select: none; 
+	 -webkit-user-select: none;
+}
+.dialog{
+	width: 90%;
+	/*height:100%;*/
+	margin:0 auto;
+	background:#fff; 
+	position: absolute;
+	z-index: 9000;
+	padding-bottom: 10px; 
+	padding-top:1.5rem;
+	display: none;
+	top:3rem;
+	left:5%;
+	
+}
+.dialog_head{
+	width: 100%;
+	height:1rem;
+	line-height: 1rem;
+	text-align: center;
+	
+}
+.dialoag_content{
+width: 100%;
+height:auto;
+overflow: auto;
+padding:1rem;
+}
+.dialog p{
+	font-size: 0.5rem;
+	margin-bottom: 0.2rem;
+}
+#close{
+	background: #0094FF;
+	color:#fff;
+	width:100%;
+	margin-top:1rem;
+	padding:0.3rem;
+	border-radius: 0.2rem;
+}

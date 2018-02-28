@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta charset="UTF-8">
+	    <meta itemprop="name" content="零用贷款，“贷”来幸福，申请简单、极速放款"/>
+		<meta name="description" itemprop="description" content="零用宝，申请简单，快速到账。您的信用可以换钱，快来试试吧" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+		<title>个人中心</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/fav.ico"/>
+		<link rel="stylesheet" href="css/basic.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/center.css" />
+	</head>
+	<body>
+		<div class="user_con">
+			<div class="user_top">
+				<div class="left">
+					<img src="img/user.png" alt="" />
+				</div>
+				<div class="right">
+					
+				</div>
+			</div>
+			<div class="user_list">
+				<a href="javascript:;" class="apply_lending">立即申请借款</a>
+				<a href="javascript:;" class="logout">退出</a>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			$(function(){
+				//申请借款
+				var uid=sessionStorage.getItem("uid");
+				var token=sessionStorage.getItem("token");
+//				if(!uid){
+//					window.location.href=login_url;
+//				}
+				$(".apply_lending").click(function(){
+					if(!uid){
+						alert("请先登录！");
+						window.location.href="index.html";
+					}
+				});
+				//借款记录
+				$(".lendRecord").click(function(e){
+					e.cancelBubble=true;
+					window.location.href="lendRecord.html"
+				});
+			
+				$(".right").html(" ")
+				var phone=sessionStorage.getItem("phone");
+				$(".right").text(phone);
+			})
+		</script>
+	</body>
+</html>

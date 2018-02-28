@@ -1,0 +1,56 @@
+.head_nav{
+	height: 2.5rem;
+    background: #0094FF;
+    line-height: 2.5rem;
+    text-align: center;
+}
+.head_nav img {
+    width: 1rem;
+    margin-top: 0.75rem;
+    margin-left: 0.6rem;
+    float:left;
+}
+.head_nav span{
+	color:#fff;
+	font-size: 0.8rem;
+	margin-left:-1.5rem;
+}
+.recordCont{
+	width:95%;
+	margin:2rem auto;
+}
+.msg{
+	width:100%;
+	background: #fff;
+	margin-bottom: 2rem;
+}
+.msg table{
+	width:100%;
+	padding: 1rem 0;
+    border-collapse: collapse;
+}
+.msg table thead tr {
+	background: #eee;
+}
+.msg table thead tr th{
+	 font-weight: normal;
+    color: #999;
+    padding: 10px 0;
+    font-size: 0.8rem;
+    text-align: center;
+}
+.back_btn{
+	margin:0 10% 0;
+}
+.backToCenter{
+	display: block;
+	margin-top: 0.7rem;
+	margin-bottom: 0.4rem;
+	text-align: center;
+    background: red;
+    color: #fff;
+    font-size: 0.8rem;
+    height: 2.0rem;
+    line-height: 2.0rem;
+    border-radius: 50px;
+}
